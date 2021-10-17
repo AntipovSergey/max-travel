@@ -1,0 +1,88 @@
+.main-header__container {
+  padding: 45px 15px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.main-header__logo {
+}
+
+.main-header__navigation {
+  margin-left: auto;
+}
+
+.main-header__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.main-header__item {
+  font-size: 16px;
+  line-height: 19px;
+  color: $color-heather;
+  margin-right: 35px;
+  transition: color ease-in-out 0.3s;
+
+  &:nth-child(4n + 4) {
+    margin-right: 0;
+  }
+
+  &--active {
+    color: $color-ebony-clay;
+  }
+
+  &:hover,
+  &:active,
+  &:focus {
+    color: $color-ebony-clay;
+    transition: color ease-in-out 0.3s;
+  }
+}
+
+.main-header__user-navigation {
+  margin-left: 35px;
+  display: flex;
+  align-items: center;
+}
+
+.main-header__login {
+  padding: 0 46px;
+  min-height: 44px;
+  background-color: transparent;
+  color: $color-tree-poppy;
+  border: 1px solid $color-tree-poppy;
+  transition: all ease-in-out 0.3s;
+
+  &:hover,
+  &:active,
+  &:focus {
+    background-color: $color-tree-poppy;
+    color: $color-white;
+    border: 1px solid $color-tree-poppy;
+  }
+}
+
+.main-header__register {
+  margin-left: 18px;
+  padding: 0 36px;
+  min-height: 44px;
+  background-color: $color-tree-poppy;
+  border: 1px solid $color-tree-poppy;
+  color: $color-white;
+  transition: all ease-in-out 0.3s;
+
+  &:hover,
+  &:active,
+  &:focus {
+    background-color: $color-white;
+    color: $color-tree-poppy;
+    border: 1px solid $color-tree-poppy;
+  }
+}
+

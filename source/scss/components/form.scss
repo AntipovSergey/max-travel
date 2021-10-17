@@ -1,0 +1,117 @@
+.form {
+}
+
+.form__title {
+  position: relative;
+  margin: 0;
+  margin-bottom: 71px;
+  font-weight: 600;
+  font-size: 22px;
+  line-height: 27px;
+  color: $color-ebony-clay;
+
+  &::before {
+    position: absolute;
+    content: "";
+    bottom: -22px;
+    left: 0;
+    width: 32px;
+    height: 2px;
+    background-color: $color-ebony-clay;
+  }
+}
+
+.form__wrapper {
+  margin-bottom: 51px;
+  max-width: 470px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(220px, 1fr));
+  gap: 35px 30px;
+}
+
+// .form__select {
+//   padding: 21px 31px;
+//   outline: none;
+//   border: 0.8px solid $color-bombay;
+//   border-radius: 6px;
+// }
+.choices {
+  margin-bottom: 0;
+}
+
+.choices__inner {
+  display: inline-block;
+  vertical-align: top;
+  width: 100%;
+  background-color: $color-white;
+  padding: 12px 31px;
+  border: 0.8px solid $color-bombay;
+  border-radius: 6px;
+  font-size: 14px;
+  min-height: 44px;
+  overflow: hidden;
+}
+
+.is-open .choices__inner {
+  border-radius: 6px 6px 0 0;
+}
+
+.choices[data-type*="select-one"]::after {
+  content: "";
+  position: absolute;
+  right: 29.5px;
+  top: 50%;
+  pointer-events: none;
+  background-image: url(../img/icons/arrow.svg);
+  background-repeat: no-repeat;
+  width: 10px;
+  height: 6px;
+  border: none;
+  transition: all ease-in-out 0.3s;
+}
+
+.choices[data-type*="select-one"].is-open::after {
+  margin: 0;
+  top: 44%;
+  transform: rotate(180deg);
+  transition: all ease-in-out 0.3s;
+}
+
+.choices[data-type*="select-one"] .choices__input {
+  padding: 0;
+}
+
+.choices__list--single {
+  padding: 0;
+}
+
+.choices[data-type*="select-one"] .choices__inner {
+  padding-bottom: 12px;
+}
+
+.choices__list--dropdown .choices__item {
+  position: relative;
+  padding: 12px 31px;
+  font-size: 14px;
+}
+
+.form__button {
+  padding: 0 59px;
+  min-height: 52px;
+  background-color: $color-tree-poppy;
+  border: 1px solid $color-tree-poppy;
+  color: $color-white;
+  transition: all ease-in-out 0.3s;
+  font-family: "Mulish", "Arial", sans-serif;
+  font-weight: 700;
+  font-size: 17px;
+  line-height: 48px;
+
+  &:hover,
+  &:active,
+  &:focus {
+    background-color: $color-white;
+    color: $color-tree-poppy;
+    border: 1px solid $color-tree-poppy;
+  }
+}
