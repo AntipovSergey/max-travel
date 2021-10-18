@@ -38,21 +38,20 @@ exports.styles = styles;
 
 const html = () => {
   return gulp.src("source/*.html")
-    .pipe(htmlmin({ collapseWhitespace: true }))
     .pipe(gulp.dest("build"));
 }
 
 // Video
 
-const video = () => {
-  return gulp.src("source/video/**/*.{mp4,ogg,webm}")
-    .pipe(gulp.dest("build/video"));
-}
+// const video = () => {
+//   return gulp.src("source/video/**/*.{mp4,ogg,webm}")
+//     .pipe(gulp.dest("build/video"));
+// }
 
 // Scripts
 
 const scripts = () => {
-  return gulp.src(["source/js/script.js","source/js/vendor.js"])
+  return gulp.src(["source/js/main.js","source/js/vendor.js"])
     // .pipe(terser())
     // .pipe(rename("script.min.js"))
     .pipe(gulp.dest("build/js"))
@@ -156,7 +155,7 @@ const reload = (done) => {
 
 const watcher = () => {
   gulp.watch("source/scss/**/*.scss", gulp.series(styles));
-  gulp.watch("source/js/script.js", gulp.series(scripts));
+  gulp.watch("source/js/main.js", gulp.series(scripts));
   gulp.watch("source/*.html", gulp.series(html, reload));
 }
 
@@ -169,7 +168,6 @@ const build = gulp.series(
   gulp.parallel(
     styles,
     html,
-    video,
     scripts,
     sprite,
     createWebp
@@ -188,7 +186,6 @@ exports.default = gulp.series(
   gulp.parallel(
     styles,
     html,
-    video,
     scripts,
     sprite,
     createWebp
